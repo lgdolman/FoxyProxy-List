@@ -25,7 +25,8 @@ if ( $password === $PASS ) {
         echo '<p>Go back to the <a href="' . $HOST . '" title="Add a new site!" target="_self">add page?</a>';
     } else {
         // Insert Record
-        $insertSite_sql = "INSERT INTO $table (Name, Domain, Tld) VALUES('$name', '$domain', '$tld')";
+		$count = rand(10, 30);
+        $insertSite_sql = "INSERT INTO $table (Name, Domain, Tld, Count) VALUES('$name', '$domain', '$tld', '$count')";
         mysql_query( $insertSite_sql ) or die ( mysql_error() );
         // Close Database Connection
         mysql_close( $con );
